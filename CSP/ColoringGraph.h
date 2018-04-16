@@ -1,11 +1,11 @@
 #pragma once
 #include "Square.h"
-class LatinSquare
+class ColoringGraph
 {
 public:
-	LatinSquare();
-	LatinSquare(int square_size, int d_size);
-	~LatinSquare();
+	ColoringGraph();
+	ColoringGraph(int size);
+	~ColoringGraph();
 
 	bool check(Node *node);
 	void deleteValuesFromDomiein();

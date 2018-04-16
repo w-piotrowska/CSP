@@ -1,17 +1,28 @@
 #pragma once
 #include "Square.h"
+#include "LatinSquare.h"
+#include "ColoringGraph.h"
+#include "NQueens.h"
+#include <stack>
 class CSPProblem
 {
 public:
 	CSPProblem();
+	CSPProblem(int type_of_problem, int size, int domain_size);
 	~CSPProblem();
 
-	bool check(int x, int y);
-	void deleteValuesFromDomein(int val, int x, int y);
+	bool backTracking(Node* act_node);
 
+	void runBT();
+	void runFC();
 
-	Square square;
-	int domain_size;
+	string print();
 
+private:
+	LatinSquare latinSquare;
+	ColoringGraph coloringGraph;
+	NQueens nQueens;
+	stack<Node*> stackOfNodes;
+	int type;
 };
 
